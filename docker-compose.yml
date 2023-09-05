@@ -1,0 +1,56 @@
+version: '3'
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+
+  fastapi-app:
+    build:
+      context: app
+    ports:
+      - "8000:8000"
+    environment:
+      MONGO_HOST: mongo
+      REDIS_HOST: latest_sensor
+      MQTT_BROKER: mosquitto
+    depends_on:
+      - mongo
+      - redis
+      - mosquitto
+
+  mqtt-publisher:
+    build:
+      context: ./mqtt_publisher
+    environment:
+      MQTT_BROKER: mosquitto
+    depends_on:
+      - mosquitto
+
+  mqtt-subscriber:
+    build:
+      context: ./mqtt_subscriber
+    environment:
+      MONGO_HOST: mongo
+      MQTT_BROKER: mosquitto
+    depends_on:
+      - mongo
+      - mosquitto
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo/data:/data/db
+
+  redis:
+    image: redis:latest
+    container_name: latest_sensor
+    ports:
+      - "6379:6379"
