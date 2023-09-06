@@ -1,0 +1,502 @@
+[
+    {
+        "sensor_id": 1,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 49.78
+    },
+    {
+        "sensor_id": 2,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 54.36
+    },
+    {
+        "sensor_id": 3,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 42.39
+    },
+    {
+        "sensor_id": 4,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 54.59
+    },
+    {
+        "sensor_id": 5,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 55.12
+    },
+    {
+        "sensor_id": 6,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 52.33
+    },
+    {
+        "sensor_id": 7,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 44.68
+    },
+    {
+        "sensor_id": 8,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 52.16
+    },
+    {
+        "sensor_id": 9,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 40.21
+    },
+    {
+        "sensor_id": 10,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 47.87
+    },
+    {
+        "sensor_id": 11,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 57.83
+    },
+    {
+        "sensor_id": 12,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 59.51
+    },
+    {
+        "sensor_id": 13,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 57.28
+    },
+    {
+        "sensor_id": 14,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 53.52
+    },
+    {
+        "sensor_id": 15,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 49.6
+    },
+    {
+        "sensor_id": 16,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 41.28
+    },
+    {
+        "sensor_id": 17,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 50.6
+    },
+    {
+        "sensor_id": 18,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 54.27
+    },
+    {
+        "sensor_id": 19,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 57.3
+    },
+    {
+        "sensor_id": 20,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 50.58
+    },
+    {
+        "sensor_id": 21,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 42.6
+    },
+    {
+        "sensor_id": 22,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 51.36
+    },
+    {
+        "sensor_id": 23,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 55.19
+    },
+    {
+        "sensor_id": 24,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 49.32
+    },
+    {
+        "sensor_id": 25,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 58.41
+    },
+    {
+        "sensor_id": 26,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 47.85
+    },
+    {
+        "sensor_id": 27,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 59.23
+    },
+    {
+        "sensor_id": 28,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 55.7
+    },
+    {
+        "sensor_id": 29,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 42.93
+    },
+    {
+        "sensor_id": 30,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 41.03
+    },
+    {
+        "sensor_id": 31,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 40.86
+    },
+    {
+        "sensor_id": 32,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 41.02
+    },
+    {
+        "sensor_id": 33,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 58.95
+    },
+    {
+        "sensor_id": 34,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 43.36
+    },
+    {
+        "sensor_id": 35,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 49.33
+    },
+    {
+        "sensor_id": 36,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 48.47
+    },
+    {
+        "sensor_id": 37,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 54.16
+    },
+    {
+        "sensor_id": 38,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 57.82
+    },
+    {
+        "sensor_id": 39,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 45.55
+    },
+    {
+        "sensor_id": 40,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 51.15
+    },
+    {
+        "sensor_id": 41,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 43.68
+    },
+    {
+        "sensor_id": 42,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 44.15
+    },
+    {
+        "sensor_id": 43,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 55.84
+    },
+    {
+        "sensor_id": 44,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 40.52
+    },
+    {
+        "sensor_id": 45,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 59.33
+    },
+    {
+        "sensor_id": 46,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 47.93
+    },
+    {
+        "sensor_id": 47,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 50.33
+    },
+    {
+        "sensor_id": 48,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 40.17
+    },
+    {
+        "sensor_id": 49,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 51.83
+    },
+    {
+        "sensor_id": 50,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 43.3
+    },
+    {
+        "sensor_id": 51,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 42.62
+    },
+    {
+        "sensor_id": 52,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 40.26
+    },
+    {
+        "sensor_id": 53,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 43.11
+    },
+    {
+        "sensor_id": 54,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 50.11
+    },
+    {
+        "sensor_id": 55,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 59.37
+    },
+    {
+        "sensor_id": 56,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 58.08
+    },
+    {
+        "sensor_id": 57,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 45.36
+    },
+    {
+        "sensor_id": 58,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 50.07
+    },
+    {
+        "sensor_id": 59,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 43.52
+    },
+    {
+        "sensor_id": 60,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 41.92
+    },
+    {
+        "sensor_id": 61,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 51.18
+    },
+    {
+        "sensor_id": 62,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 58.17
+    },
+    {
+        "sensor_id": 63,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 44.79
+    },
+    {
+        "sensor_id": 64,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 45.77
+    },
+    {
+        "sensor_id": 65,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 54.21
+    },
+    {
+        "sensor_id": 66,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 54.22
+    },
+    {
+        "sensor_id": 67,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 41.94
+    },
+    {
+        "sensor_id": 68,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 55.66
+    },
+    {
+        "sensor_id": 69,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 42.01
+    },
+    {
+        "sensor_id": 70,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 44.36
+    },
+    {
+        "sensor_id": 71,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 50.96
+    },
+    {
+        "sensor_id": 72,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 53.39
+    },
+    {
+        "sensor_id": 73,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 51.72
+    },
+    {
+        "sensor_id": 74,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 59.23
+    },
+    {
+        "sensor_id": 75,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 44.2
+    },
+    {
+        "sensor_id": 76,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 43.45
+    },
+    {
+        "sensor_id": 77,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 57.55
+    },
+    {
+        "sensor_id": 78,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 42.95
+    },
+    {
+        "sensor_id": 79,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 45.64
+    },
+    {
+        "sensor_id": 80,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 41.75
+    },
+    {
+        "sensor_id": 81,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 56.06
+    },
+    {
+        "sensor_id": 82,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 47.45
+    },
+    {
+        "sensor_id": 83,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 43.31
+    },
+    {
+        "sensor_id": 84,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 40.24
+    },
+    {
+        "sensor_id": 85,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 41.53
+    },
+    {
+        "sensor_id": 86,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 58.31
+    },
+    {
+        "sensor_id": 87,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 40.5
+    },
+    {
+        "sensor_id": 88,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 57.93
+    },
+    {
+        "sensor_id": 89,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 49.63
+    },
+    {
+        "sensor_id": 90,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 45.09
+    },
+    {
+        "sensor_id": 91,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 55.29
+    },
+    {
+        "sensor_id": 92,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 50.38
+    },
+    {
+        "sensor_id": 93,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 42.41
+    },
+    {
+        "sensor_id": 94,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 45.99
+    },
+    {
+        "sensor_id": 95,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 53.36
+    },
+    {
+        "sensor_id": 96,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 56.7
+    },
+    {
+        "sensor_id": 97,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 42.71
+    },
+    {
+        "sensor_id": 98,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 50.36
+    },
+    {
+        "sensor_id": 99,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 47.24
+    },
+    {
+        "sensor_id": 100,
+        "timestamp": "2023-09-06T14:30:45",
+        "value": 52.1
+    }
+]
