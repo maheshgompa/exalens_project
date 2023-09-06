@@ -13,8 +13,8 @@ connection_uri = f"mongodb://{username}:{password}@{host}:{port}"
 
 # Access the database and collection
 client = MongoClient(connection_uri)
-db = client.admin  # Connect to the admin database
-collection = db.sensor_data_collection
+db = client["sensor_reading"]
+collection = db["sensor_data_reading"]
 
 # Check if the connection is successful
 try:
@@ -25,7 +25,7 @@ except pymongo.errors.ConnectionFailure as e:
 # Example query to retrieve all documents from the collection
 documents = collection.find()
 
-print(documents)
+# print(documents)
 # Iterate through the retrieved documents
 for document in documents:
     print(document)
