@@ -5,8 +5,9 @@ import paho.mqtt.client as mqtt
 
 # MQTT settings
 MQTT_BROKER_HOST = "localhost"  # MQTT broker host
-MQTT_TOPIC = "test2/topic"  # MQTT topic to subscribe to
-
+# MQTT_TOPIC = "test2/topic"  # MQTT topic to subscribe to
+temperature_topic = "sensors/temperature"
+humidity_topic = "sensors/humidity"
 # Connection details
 username = 'admin'
 password = 'adminpassword'
@@ -19,7 +20,7 @@ connection_uri = f"mongodb://{username}:{password}@{host}:{port}"
 # Connect to the database
 client = pymongo.MongoClient(connection_uri)
 db = client.admin  # Connect to the admin database
-collection = db.mahesh_sensor_data
+collection = db.sensor_data_collection
 # Check if the connection is successful
 try:
     db.command('ismaster')  # A simple command to test the connection
@@ -39,7 +40,10 @@ client.on_message = on_message
 
 # Connect to MQTT broker and subscribe to the topic
 client.connect(MQTT_BROKER_HOST)
-client.subscribe(MQTT_TOPIC)
+client.subscribe(temperature_topic)
+client.subscribe(humidity_topic)
+
+# client.subscribe(MQTT_TOPIC)
 
 # Start MQTT loop to process messages
 client.loop_forever()
