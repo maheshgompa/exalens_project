@@ -14,7 +14,7 @@ connection_uri = f"mongodb://{username}:{password}@{host}:{port}"
 # Access the database and collection
 client = MongoClient(connection_uri)
 db = client.admin  # Connect to the admin database
-collection = db.mahesh_sensor_data
+collection = db.sensor_data_collection
 
 # Check if the connection is successful
 try:
