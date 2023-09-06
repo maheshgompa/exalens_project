@@ -20,7 +20,7 @@ connection_uri = f"mongodb://{username}:{password}@{host}:{port}"
 # Access the database and collection
 client = MongoClient(connection_uri)
 db = client.admin  # Connect to the admin database
-collection = db.mahesh_sensor_data
+collection = db.sensor_data_collection
 try:
     db.command('ismaster')  # A simple command to test the connection
     print("Connected to MongoDB successfully!")
@@ -42,7 +42,7 @@ except ConnectionError as e:
 # Retrieve the latest ten sensor readings from MongoDB
 latest_readings = list(collection.find().sort([('_id', -1)]).limit(10))
 # latest_readings = list(collection.find({"sensor_id": {"$gte": 1, "$lte": 5}}))
-print(latest_readings)
+# print(latest_readings)
 # Store the readings in Redis
 for reading in latest_readings:
     json_reading = json.dumps(reading, default=str)  # Convert dict to JSON string
