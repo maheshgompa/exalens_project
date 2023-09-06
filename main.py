@@ -1,9 +1,10 @@
 import pymongo
 from fastapi import FastAPI, HTTPException, Query
-from pymongo import MongoClient
+from pymongo import MongoClient,ASCENDING
 import redis
 import json
 from typing import List, Dict
+from datetime import datetime
 
 app = FastAPI()
 
@@ -22,8 +23,8 @@ connection_uri = f"mongodb://{username}:{password}@{host}:{port}"
 
 # Connect to the database
 client = pymongo.MongoClient(connection_uri)
-db = client.admin  # Connect to the admin database
-collection = db.testdata
+db = client.admin
+collection = db["sensor_data_reading"]
 
 # Check if the connection is successful
 try:
@@ -45,25 +46,45 @@ try:
 except ConnectionError as e:
     print("Error: Unable to connect to Redis -", e)
 
-@app.get("/sensor-readings")
-def get_sensor_readings(start: str = Query(...), end: str = Query(...)):
-    try:
-        # Query MongoDB for sensor readings within the specified range
-        sensor_readings = collection.find({
-            "timestamp": {
-                "$gte": start,
-                "$lte": end
-            }
-        })
-        return list(sensor_readings)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/last-ten-sensor-readings")
-def get_last_ten_sensor_readings(sensor_id: int = Query(...)):
+# Define endpoint to fetch sensor readings by specifying a start and end range
+@app.get("/sensor-readings/")
+async def get_sensor_readings(start: str = Query(..., description="Start timestamp"),
+                              end: str = Query(..., description="End timestamp")):
+    # Query MongoDB based on the provided start and end timestamps
+    if start and end:
+        readings = collection.find({"timestamp": {"$gte": start, "$lte": end}})
+    else:
+        # If no range specified, return all readings
+        readings = collection.find()
+
+    # Convert MongoDB cursor to a list of readings
+    readings_list = [reading for reading in readings]
+    return {"sensor_readings": readings_list}
+
+
+# Define endpoint to retrieve the last ten sensor readings for a specific sensor
+@app.get("/last-ten-readings/{sensor_id}")
+async def get_last_ten_readings(sensor_id: str):
     try:
-        # Query Redis for the last ten sensor readings for the specified sensor
-        sensor_readings = redis_client.lrange(f"sensor:{sensor_id}", 0, 9)
-        return sensor_readings
+        # Check if sensor_id exists in Redis
+        if redis_client.exists(sensor_id):
+            # Retrieve the last ten readings from Redis
+            last_ten_readings = redis_client.lrange(sensor_id, 0, 9)
+            return {"sensor_id": sensor_id, "last_ten_readings": last_ten_readings}
+
+        # If not found in Redis, check MongoDB (assuming MongoDB has the sensor data)
+        collection = db["sensor_data"]  # Replace with your MongoDB collection name
+        sensor_data = collection.find({"sensor_id": sensor_id}).limit(10).sort([("timestamp", -1)])
+
+        # Extract the last ten readings from MongoDB
+        last_ten_readings = [{"value": data["value"], "timestamp": data["timestamp"]} for data in sensor_data]
+        return {"sensor_id": sensor_id, "last_ten_readings": last_ten_readings}
+
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000)
