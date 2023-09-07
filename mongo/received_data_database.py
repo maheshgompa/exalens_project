@@ -13,7 +13,7 @@ connection_uri = f"mongodb://{username}:{password}@{host}:{port}"
 
 # Access the database and collection
 client = MongoClient(connection_uri)
-db = client["sensor_reading"]
+db = client.admin
 collection = db["sensor_data_reading"]
 
 # Check if the connection is successful
@@ -30,11 +30,9 @@ documents = collection.find()
 for document in documents:
     print(document)
 
-
 # Query documents where the value of the "sensor_type" field is "temperature"
 query = {"sensor_type": "temperature"}
 documents = collection.find(query)
-
 
 # Close the MongoDB connection
 client.close()
