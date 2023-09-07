@@ -5,8 +5,8 @@ import paho.mqtt.client as mqtt
 broker_address = "localhost"  # Change this to your broker's IP address or hostname
 port = 1883
 
-temperature_topic = "sensors/temperature"
-humidity_topic = "sensors/humidity"
+temperature_topic = "sensors_temperature"
+humidity_topic = "sensors_humidity"
 
 # MQTT on_connect callback
 def on_connect(client, userdata, flags, rc):
