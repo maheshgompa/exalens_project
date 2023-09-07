@@ -48,19 +48,23 @@ except ConnectionError as e:
 
 
 # Define endpoint to fetch sensor readings by specifying a start and end range
-@app.get("/sensor-readings/")
-async def get_sensor_readings(start: str = Query(..., description="Start timestamp"),
-                              end: str = Query(..., description="End timestamp")):
+@app.get("/fetch_sensor_readings/")
+def fetch_sensor_readings(start_date: str = Query(..., description="Start id for the range"),
+                          end_date: str = Query(..., description="End id for the range")):
     # Query MongoDB based on the provided start and end timestamps
-    if start and end:
-        readings = collection.find({"timestamp": {"$gte": start, "$lte": end}})
-    else:
-        # If no range specified, return all readings
-        readings = collection.find()
+    try:
+        # Query MongoDB for sensor readings within the specified date range
+        readings = collection.find({
+            "sensor_id": {"$gte": start_date, "$lte": end_date}
+        })
 
-    # Convert MongoDB cursor to a list of readings
-    readings_list = [reading for reading in readings]
-    return {"sensor_readings": readings_list}
+        # Convert MongoDB cursor to a list of readings
+        readings_list = list(readings)
+
+        return {"sensor_readings": readings_list}
+
+    except Exception as e:
+        return {"error": f"An error occurred: {str(e)}"}
 
 
 # Define endpoint to retrieve the last ten sensor readings for a specific sensor
