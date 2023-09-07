@@ -5,8 +5,8 @@ import paho.mqtt.client as mqtt
 
 # MQTT settings
 MQTT_BROKER_HOST = "localhost"  # MQTT broker host
-temperature_topic = "sensors/temperature"
-humidity_topic = "sensors/humidity"
+temperature_topic = "sensors_temperature"
+humidity_topic = "sensors_humidity"
 
 # Connection details
 username = 'admin'
