@@ -7,9 +7,8 @@ broker_port = 1883
 keepalive_interval = 60
 
 # Publish a message to a topic
-temperature_topic = "sensors/temperature"
-humidity_topic = "sensors/humidity"
-
+temperature_topic = "sensors_temperature"
+humidity_topic = "sensors_humidity"
 
 temperature_data = [
     {
@@ -1017,23 +1016,15 @@ humidity_data = [
 ]
 
 client = mqtt.Client()
-# def on_connect(client, userdata, flags, rc):
-#     if rc == 0:
-#         print("Connected to MQTT broker")
-#     else:
-#         print(f"Connection failed with error code {rc}")
-#
-# # Set the callback function for the connection
-# client.on_connect = on_connect
 
 # Connect to the broker
 client.connect(broker_address, broker_port, keepalive_interval)
 
 # Connect to the MQTT broker
-if client.is_connected():
-    print("Client is connected to the MQTT broker")
-else:
-    print("Client is not connected to the MQTT broker")
+# if client.is_connected():
+#     print("Client is connected to the MQTT broker")
+# else:
+#     print("Client is not connected to the MQTT broker")
 
 # Publish sensor data to MQTT topics
 client.publish(temperature_topic, json.dumps(temperature_data))
