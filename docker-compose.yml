@@ -1,56 +1,54 @@
 version: '3'
 services:
-  mosquitto:
-    image: eclipse-mosquitto
-    container_name: mosquitto
-    volumes:
-      - ./mosquitto/config:/mosquitto/config
+  mqtt-broker:
+    image: eclipse-mosquitto:latest
     ports:
-      - "1883:1883"
-      - "9001:9001"
+      - "1884:1884"
+    networks:
+      - my_network
 
-  fastapi-app:
-    build:
-      context: app
-    ports:
-      - "8000:8000"
-    environment:
-      MONGO_HOST: mongo
-      REDIS_HOST: latest_sensor
-      MQTT_BROKER: mosquitto
-    depends_on:
-      - mongo
-      - redis
-      - mosquitto
-
-  mqtt-publisher:
+  mqtt_publisher:
     build:
       context: ./mqtt_publisher
-    environment:
-      MQTT_BROKER: mosquitto
     depends_on:
-      - mosquitto
+      - mqtt-broker
+    networks:
+      - my_network
 
-  mqtt-subscriber:
+  mqtt_subscriber:
     build:
-      context: ./mqtt_subscriber
-    environment:
-      MONGO_HOST: mongo
-      MQTT_BROKER: mosquitto
+      context: ./mqtt_subscriber  # Replace with the path to your MQTT Subscriber code
     depends_on:
-      - mongo
-      - mosquitto
+      - mqtt-broker
+    networks:
+      - my_network
 
   mongo:
     image: mongo:latest
-    container_name: mongo
     ports:
       - "27017:27017"
-    volumes:
-      - ./mongo/data:/data/db
+    networks:
+      - my_network
 
   redis:
     image: redis:latest
-    container_name: latest_sensor
     ports:
       - "6379:6379"
+    networks:
+      - my_network
+
+  fastapi:
+    build:
+      context: ./fastapi-app  # Replace with the path to your FastAPI app code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mqtt-broker
+      - mqtt_subscriber
+      - mongo
+      - redis
+    networks:
+      - my_network
+
+networks:
+  my_network:
