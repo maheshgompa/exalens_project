@@ -1017,14 +1017,14 @@ humidity_data = [
 ]
 
 client = mqtt.Client()
-def on_connect(client, userdata, flags, rc):
-    if rc == 0:
-        print("Connected to MQTT broker")
-    else:
-        print(f"Connection failed with error code {rc}")
-
-# Set the callback function for the connection
-client.on_connect = on_connect
+# def on_connect(client, userdata, flags, rc):
+#     if rc == 0:
+#         print("Connected to MQTT broker")
+#     else:
+#         print(f"Connection failed with error code {rc}")
+#
+# # Set the callback function for the connection
+# client.on_connect = on_connect
 
 # Connect to the broker
 client.connect(broker_address, broker_port, keepalive_interval)
@@ -1039,7 +1039,7 @@ else:
 client.publish(temperature_topic, json.dumps(temperature_data))
 client.publish(humidity_topic, json.dumps(humidity_data))
 time.sleep(5)
-print(f"Published sensor data: {temperature_data} and {humidity_data}")
+print(f"Published temperature sensor data: {temperature_data}\nPublished humidity sensor data: {humidity_data}")
 
 # Disconnect from the broker
 client.disconnect()
